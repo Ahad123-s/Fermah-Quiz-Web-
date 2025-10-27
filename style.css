@@ -1,0 +1,162 @@
+body {
+    background-color: #001f3f; /* Navy Blue */
+    color: #00ff99; /* Green */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    transition: all 0.5s ease;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.logo {
+    width: 60px;
+    margin-right: 15px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #00ff99;
+    text-shadow: 0 0 15px rgba(0, 255, 153, 0.6);
+}
+
+.btn {
+    background-color: #00ff99;
+    color: #001f3f;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 153, 0.3);
+}
+
+.btn:hover {
+    background-color: #00cc7a;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 153, 0.6);
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.hide {
+    display: none;
+}
+
+.navigation {
+    margin-top: 20px;
+}
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.footer-left {
+    color: #00ff99;
+}
+
+.x-logo {
+    width: 25px;
+    filter: invert(64%) sepia(98%) saturate(326%) hue-rotate(96deg) brightness(95%) contrast(89%);
+    transition: transform 0.3s ease;
+}
+
+.x-logo:hover {
+    transform: scale(1.2);
+}
+
+.selected {
+    background-color: #006644 !important;
+    color: white !important;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 255, 153, 0.5);
+}
+
+/* Fade Animation for Questions */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-out for smooth question transitions */
+.fade-out {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeOut 0.4s ease forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+/* Result Section Fade */
+#result-container {
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .btn-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .btn {
+        width: 80%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .logo {
+        width: 50px;
+    }
+}
